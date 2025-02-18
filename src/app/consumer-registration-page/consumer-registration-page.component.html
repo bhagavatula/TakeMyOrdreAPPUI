@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Login Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>  
+  <!--<div ng-controller="LoginController"> -->
+  <div class="login-container">
+  <div class="card">
+  <h2 class="card-header">Login</h2>
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">      
+        <label for="username">UserName:</label>
+        <input 
+          type="username" 
+          id="username" 
+          name="username" 
+          [(ngModel)]="userData.username" 
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"  [(ngModel)]="userData.password" required />
+      </div>
+            <button class ='btn btn-primary' type="submit">Login</button>
+    </form> 
+    <p class = 'signup-link'>
+      Don't have an account <a routerLink="/signupPage">Sign Up</a>
+    </p>
+   <!-- <a routerlink="../signupPage" class="btn btn-link" href="/sign-up">Register</a> --->
+  </div>
+</div>
+</body>
+</html>
+  
