@@ -18,4 +18,8 @@ export class AuthService {
     fetchRegisteredUserData():Observable<any>{
       return this.http.get(this.apiAllConsumerData);
     }
+
+    fetchRegisteredUserById(userID:any):Observable<any>{
+      return this.http.get(environment.apiConsuerDataIdUrl,userID);
+    }
 }

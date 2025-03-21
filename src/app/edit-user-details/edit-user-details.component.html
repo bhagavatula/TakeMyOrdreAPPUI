@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS Login Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>  
+  <!--<div ng-controller="LoginController"> -->
+  <div class="editUserDetails-container">
+  <div class="card">
+  <h2 class="card-header">EditUserData</h2>
+  <form  *ngIf="addUserDataForm" [formGroup]="addUserDataForm" (ngSubmit)="onSubmit()">
+    <!-- <from> -->
+    <!-- <form    [formGroup]="addUserDataForm" > -->
+    <!-- <div *ngIf="addUserDataForm"> -->
+    <!-- <div [formGroup]="addUserDataForm" >       -->
+        <!-- <label for="firstname" > FirstName: <span class="required">*</span> </label>
+        <input type="text" formControlName="firstname" > -->
+        <!-- <input type="text" formControlName="firstname" [(ngModel)]="firstname"> -->
+        <!-- <input type="text" formControlName="firstname" class="form-control" [(ngModel)]="registrationFields.firstname"> -->
+        <!-- <p> -->
+          <label for="firstname" > FirstName: <span class="required">*</span> </label>
+          
+          <input type="text" id="firstname" formControlName="firstname"  value="{{ addUserDataForm.get('firstname')?.value }}">
+          <!-- <p>Value: {{ addUserDataForm.get('firstname')?.value }}</p> -->
+          
+        <!-- </p> -->
+        <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert" >
+          <div *ngIf="name.errors?.['required']">Firstname is required.</div>
+          <div *ngIf="name.errors?.['minlength']">
+            Firstname must be at least 4 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            Firstname cannot be Bob.
+          </div>
+        </div> -->
+        
+      <!-- </div> -->
+    <!-- <div class="form-group">
+        <label for="lastname">Lastname:</label>
+        <input type="lastname" id="lastname" name="lastname"  [(ngModel)]="registrationFields.lastname" required />
+      </div>
+    <div class="form-group"> 
+        <label for="age">Age:</label>
+        <input type="age" id="age" name="age" [(ngModel)]="registrationFields.age" required />
+      </div>    
+    <div class="form-group"> 
+        <label for="sex">Sex:</label>
+        <input type="sex" id="sex" name="sex" [(ngModel)]="registrationFields.sex" required />
+      </div> 
+   <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" ndModel id="email" name="email" [(ngModel)]="registrationFields.email" placeholder="Ex. pat@example.com" required />
+    </div> -->
+  <!--<mat-form-field>
+    <mat-label>"registrationFields.dateofBirth"</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> -->
+
+  <!-- <div class="form-group"> 
+    <mat-form-field>
+      <label for="dateofBirth">DateOfBirth:</label> -->
+      <!-- <input type="dateofBirth" id="dateofBirth" name="dateOfBirth" [(ngModel)]="registrationFields.dateofBirth" required /> -->
+      <!-- <input matInput [matDatepicker]="picker" type="dateofBirth" id="dateofBirth" name="dateOfBirth" [(ngModel)]="registrationFields.dateofbirth" required>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    </div>
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="address" id="address" name="address" [(ngModel)]="registrationFields.address" required />
+    </div>
+    <div class="form-group"> 
+        <label for="zipcode">ZipCode:</label>
+        <input type="zipcode" id="zipcode" name="zipcode" [(ngModel)]="registrationFields.zipcode" required />
+    </div> -->
+      <div class="button-container">
+        <button class ='btn btn-primary' type="submit">Submit</button>
+        <button class ='btn btn-primary' type="submit" a routerLink="/consumerPage" >Cancel</button>
+      </div>
+    <!-- </ng-container> -->
+  <!-- </div> -->
+    </form>
+    <!-- <p>FirstName: {{ addUserDataForm.get('firstname')?.value }}</p> -->
+    <!-- <p>FirstName: {{ addUserDataForm.controls.firstname.value}}</p> -->
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>   
+  </div>
+</div>
+</body>
+</html> 

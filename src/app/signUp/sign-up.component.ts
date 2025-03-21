@@ -53,15 +53,7 @@ export class SignUpComponent implements OnInit {
         this.successMessage = 'Registration Successfull';
         this.errorMessage = '';
       },
-      error:(error: HttpErrorResponse)=>{
-    //     if (error.error){
-    //       this.errorList = error.error.errors;
-    //     this.errorList.forEach(err => console.error(err));
-    //   } else {
-    //      this.errorMessage = error.message;
-      
-    // }
-        
+      error:(error: HttpErrorResponse)=>{ 
         if (error.status == 409){
           // const errors = error.errors;
         //   this.errorList = error.errors;

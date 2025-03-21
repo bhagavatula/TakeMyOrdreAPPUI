@@ -14,10 +14,11 @@ import { TakeMyOrdrUsrSerivce } from './taskusers/takemyorderusers.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ConsumerRegistrationPageComponent } from './consumer-registration-page/consumer-registration-page.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { SignUpComponent } from './signUp/sign-up.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { EditUserDetailsComponent } from './edit-user-details/edit-user-details.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,15 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     HomePageComponent,
     ConsumerRegistrationPageComponent,
     SignUpComponent,
-    UserDetailsComponent    
+    UserDetailsComponent,
+    EditUserDetailsComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatInputModule,
@@ -40,7 +43,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [TakeMyOrdrUsrSerivce],
-  bootstrap: [AppComponent]
+  providers: [TakeMyOrdrUsrSerivce,EditUserDetailsComponent],   
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }

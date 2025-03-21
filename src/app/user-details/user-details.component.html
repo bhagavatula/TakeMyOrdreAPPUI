@@ -19,10 +19,14 @@
     <tbody>
       <!--<table mat-table  class ="mat-elevation-z8"> -->
       <!-- Name Column -->
+       <!-- <td> -->
+        <!-- <input type = "text" /> -->
+      
       <ng-container matColumnDef="Name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-        <td mat-cell *matCellDef="let element" class="text-center">{{element.firstName}} {{element.lastName}}</td>
+        <td input type = "text" mat-cell  *matCellDef="let element" class="text-center">{{element.firstName}} {{element.lastName}}</td>
       </ng-container>
+    <!-- </td> -->
 
       <!-- <ng-container matColumnDef="lastName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
@@ -52,12 +56,11 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
         <td mat-cell *matCellDef="let row">
           <div class="button-container" class="text-center">
-            <button class='btn btn-primary' style="margin:5px;" type="submit" a routerLink="/consumerPage">Edit</button>
-            <button class='btn btn-primary'  style="margin:5px;" type="submit" a routerLink="/consumerPage">Delete</button>
+            <button class='btn btn-primary' style="margin:5px;" type="submit" (click)="OnEdit(row.id)" a routerLink="/editConsumerData">Edit</button>
+            <button class='btn btn-danger mx-2'  style="margin:5px;" type="submit" a routerLink="/editConsumerData">Delete</button>
           </div>
         </td>
       </ng-container>
-
       <!-- Header and Row Definitions -->
       <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumn;"></tr>
